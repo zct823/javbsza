@@ -168,7 +168,7 @@
 - (void)saveToServer
 {
     NSString *urlString = [NSString stringWithFormat:@"%@/api/settings_news_preference.php?token=%@",APP_API_URL,[[[NSUserDefaults standardUserDefaults] objectForKey:@"tokenString"]mutableCopy]];
-    NSString *dataContent = [NSString stringWithFormat:@"{\"flag\":\"UNFOLLOW_CP\",\"cp_name\":\"%@\"}",self.detailsData.contentProviderUID];
+    NSString *dataContent = [NSString stringWithFormat:@"{\"flag\":\"UNFOLLOW_CP\",\"cp_id\":\"%@\"}",self.detailsData.contentProviderUID];
     
     NSLog(@"Data Content: %@",dataContent);
     

@@ -63,7 +63,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading..." width:100];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading..." width:0];
     [self performSelector:@selector(loadData) withObject:self];
 }
 
