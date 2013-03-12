@@ -259,8 +259,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     NSDictionary *resultsDictionary = [[response objectFromJSONString] mutableCopy];
     NSLog(@"(BottomSwipeView) Vardumping resultsDictionary: %@",resultsDictionary);
     
-    [DejalBezelActivityView removeViewAnimated:YES];
-    
     //BottomSwipeView Customization after action
     
     NSString *setList, *setId, *setIdName = nil;
@@ -413,6 +411,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             {
                 if ([contentSwitch isEqual:@"0"] || contentSwitch == nil)
                 {
+                    
+                    [self preparingDefaultFolder];
+                    
                     addNewFolder = [[UITextField alloc]initWithFrame:CGRectMake(5, 5, 140, 20)];
                     addNewFolder.delegate = self;
                     addNewFolder.text = @"";
@@ -464,8 +465,20 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         }
     }
     [self.activityView stopAnimating];
+    [DejalBezelActivityView removeViewAnimated:YES];
     
     [resultsDictionary release];
+}
+
+- (void)preparingDefaultFolder
+{
+    //prepare to create default folder if there is no single folder yet.
+    
+    NSLog(@"No single folder detected. Create new one for user");
+    
+    [self.activityView startAnimating];
+    [self storeOrModifyFavFolder:1 withFolderName:@"My Fav Folder" andFolderID:nil];
+    
 }
 
 - (void)storeOrModifyFavFolder:(NSInteger)tagID withFolderName:(NSString *)folderName andFolderID:(NSInteger)folderID
@@ -502,9 +515,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             [self.activityView startAnimating];
             [label setText:@""];
-            
-            //contentSwitch = @"0";
-            [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        
             [self performSelector:@selector(setupCatagoryList) withObject:self afterDelay:0.5f];
         }
     }
