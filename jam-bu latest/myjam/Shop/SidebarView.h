@@ -34,4 +34,6 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *cartItems;
 
+- (void) reloadImage;
+
 @end

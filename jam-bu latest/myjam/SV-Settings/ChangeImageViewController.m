@@ -105,6 +105,10 @@
         
         UJliteProfileViewController *ujlite = [[UJliteProfileViewController alloc] init];
         [ujlite reloadView];
+        [ujlite release];
+        SidebarView *sbar = [[SidebarView alloc] init];
+        [sbar reloadImage];
+        [sbar release];
     }else{
         NSString *error = [NSString stringWithFormat:@"%@",[asiRequest error]];
         NSLog(@"error: %@",error);
