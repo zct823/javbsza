@@ -243,6 +243,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 {
     NSLog(@"setupCatagoryList. checked %d",[checkedCategories count]);
     
+    [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //clear content first before reload
+    
+    [self.activityView startAnimating];
+    
     NSDictionary *categories;
     
     NSString *urlString = [self returningAPIString];
