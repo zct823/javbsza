@@ -29,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self changeImaged];
+    [self performSelectorInBackground:@selector(changeImaged) withObject:self];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Please wait..." width:100];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -60,7 +61,7 @@
     {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         self.proImage = [[UIImageView alloc ] initWithImage:image];
-        [self uploadImage];
+        [self performSelectorInBackground:@selector(uploadImage) withObject:self];
         //        self.isImageChanged = YES;
         //        NSLog(@"check if image changed %d",isImageChanged);
     }

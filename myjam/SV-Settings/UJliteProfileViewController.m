@@ -57,10 +57,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self loadData];
-    
-    
-    
+    //[self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading..." width:100];
+    [self performSelector:@selector(loadData) withObject:self];
 }
 
 -(void)loadData
@@ -312,6 +316,7 @@
         }
         //        [resultProfile release];
     }
+    [DejalBezelActivityView removeViewAnimated:YES];
     [resultsDictionary release];
     return success;
 }
