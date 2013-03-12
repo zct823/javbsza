@@ -46,6 +46,8 @@
 		2175B08516D60BEF003F85FD /* CPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2175B08316D60BEE003F85FD /* CPViewController.xib */; };
 		219363CC16E44856000F8F60 /* AllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219363CB16E44856000F8F60 /* AllViewController.m */; };
 		219363D116E44872000F8F60 /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219363D016E44872000F8F60 /* PromotionsViewController.m */; };
+		21B2E3E616EEFDFA004B8324 /* login_fb_glossy.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B2E3E516EEFDFA004B8324 /* login_fb_glossy.png */; };
+		21B2E3EA16EEFED6004B8324 /* login_or_w_greenline.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B2E3E916EEFED6004B8324 /* login_or_w_greenline.png */; };
 		21F967FF16D45F560067AA22 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F967FE16D45F560067AA22 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6114A50F16B18921009299EE /* CreateBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6114A50916B187BE009299EE /* CreateBoxViewController.m */; };
 		6114A51116B1893C009299EE /* ShareBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6114A50E16B187BE009299EE /* ShareBoxViewController.m */; };
@@ -537,6 +539,8 @@
 		219363CB16E44856000F8F60 /* AllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllViewController.m; path = Home/AllViewController.m; sourceTree = "<group>"; };
 		219363CF16E44872000F8F60 /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PromotionsViewController.h; path = Home/PromotionsViewController.h; sourceTree = "<group>"; };
 		219363D016E44872000F8F60 /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PromotionsViewController.m; path = Home/PromotionsViewController.m; sourceTree = "<group>"; };
+		21B2E3E516EEFDFA004B8324 /* login_fb_glossy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_fb_glossy.png; path = loginpage/login_fb_glossy.png; sourceTree = "<group>"; };
+		21B2E3E916EEFED6004B8324 /* login_or_w_greenline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_or_w_greenline.png; path = loginpage/login_or_w_greenline.png; sourceTree = "<group>"; };
 		21F967FE16D45F560067AA22 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		21F9680216D465650067AA22 /* FBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAppDelegate.h; sourceTree = "<group>"; };
 		6114A50816B187BE009299EE /* CreateBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBoxViewController.h; sourceTree = "<group>"; };
@@ -1229,6 +1233,8 @@
 		613960F616EED2610056B314 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21B2E3E916EEFED6004B8324 /* login_or_w_greenline.png */,
+				21B2E3E516EEFDFA004B8324 /* login_fb_glossy.png */,
 				613960F716EED2610056B314 /* ad4.png */,
 				613960F816EED2610056B314 /* added_cart.png */,
 				613960F916EED2610056B314 /* alarm_icon.png */,
@@ -2544,6 +2550,8 @@
 				6139621F16EED2620056B314 /* XL_button.png in Resources */,
 				6139622016EED2620056B314 /* XXL_button.png in Resources */,
 				6139622116EED2620056B314 /* yes_btn.png in Resources */,
+				21B2E3E616EEFDFA004B8324 /* login_fb_glossy.png in Resources */,
+				21B2E3EA16EEFED6004B8324 /* login_or_w_greenline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
