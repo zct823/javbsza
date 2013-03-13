@@ -322,6 +322,10 @@
 {
     NSLog(@"handleLogout");
     
+    AppDelegate *myDel = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    [DejalBezelActivityView activityViewForView:myDel.window withLabel:@"Logging out..." width:100];
+    
     // If OK, go to alertview delegate
     CustomAlertView *alert = [[CustomAlertView alloc] initWithTitle:@"Logout JAM-BU" message:@"Are you sure to logout?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes",nil];
     [alert show];
@@ -332,7 +336,12 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 1) {
+    if (buttonIndex == 0)
+    {
+        NSLog(@"Button 0 voided");
+        [DejalBezelActivityView removeViewAnimated:YES];
+    }
+    else if (buttonIndex == 1) {
         AppDelegate *mydelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [mydelegate presentLoginPage];
         NSUserDefaults *localData = [NSUserDefaults standardUserDefaults];

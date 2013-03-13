@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.selectedApp = @"";
 	// Do any additional setup after loading the view.
+    
 }
 
 - (NSString *)returnAPIURL

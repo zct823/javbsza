@@ -1187,13 +1187,13 @@
 		21735AEE16CCAE7E001C789A /* SV-Settings */ = {
 			isa = PBXGroup;
 			children = (
-				213AF72816DAFCCD00798CB7 /* UJliteProfileViewController.h */,
 				FF10D89E16EA094E00479199 /* AddMailViewController.h */,
 				FF10D89F16EA094E00479199 /* AddMailViewController.m */,
 				FF10D8A016EA094E00479199 /* AddMailViewController.xib */,
 				FF10D8A116EA094F00479199 /* EditMailViewController.h */,
 				FF10D8A216EA094F00479199 /* EditMailViewController.m */,
 				FF10D8A316EA094F00479199 /* EditMailViewController.xib */,
+				213AF72816DAFCCD00798CB7 /* UJliteProfileViewController.h */,
 				213AF72916DAFCCD00798CB7 /* UJliteProfileViewController.m */,
 				213AF72A16DAFCCD00798CB7 /* UJliteProfileViewController.xib */,
 				213AF71E16DAFCBF00798CB7 /* CustomAddress.h */,

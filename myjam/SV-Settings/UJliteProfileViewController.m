@@ -33,6 +33,8 @@
 
 @implementation UJliteProfileViewController
 
+@synthesize activityIndicator;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -57,13 +59,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicator.frame = CGRectMake(20, 130, 130, 143);
     //[self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading..." width:0];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading..." width:100];
+    [activityIndicator startAnimating];
     [self performSelector:@selector(loadData) withObject:self];
 }
 
@@ -316,6 +321,8 @@
         }
         //        [resultProfile release];
     }
+    [activityIndicator stopAnimating];
+    [activityIndicator removeFromSuperview];
     [DejalBezelActivityView removeViewAnimated:YES];
     [resultsDictionary release];
     return success;
@@ -423,7 +430,7 @@
 {
     ChangeImageViewController *civc = [[ChangeImageViewController alloc] init];
     AppDelegate *mydelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [mydelegate.otherNavController pushViewController:civc animated:YES];
+    [mydelegate.otherNavController pushViewController:civc animated:NO];
     [civc release];
 }
 

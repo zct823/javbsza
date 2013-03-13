@@ -649,8 +649,9 @@ NSString *const FBSessionStateChangedNotification = @"com.me-tech.jambu:FBSessio
 
     }
     else{
-    return [FBSession.activeSession handleOpenURL:url];
+        return [FBSession.activeSession handleOpenURL:url];
     }
+    return [FBSession.activeSession handleOpenURL:url];
 }
 
 - (void)closeSession

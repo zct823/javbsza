@@ -29,9 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self performSelectorInBackground:@selector(changeImaged) withObject:self];
+//    [self performSelectorInBackground:@selector(changeImaged) withObject:self];
+    [self changeImaged];
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"Please wait..." width:100];
     // Do any additional setup after loading the view from its nib.
+    proImage = [[UIImageView alloc] init];
 }
 
 - (void)changeImaged
@@ -43,7 +45,8 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
         imagePicker.allowsEditing = NO;
-        [self presentModalViewController:imagePicker animated:YES];
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        //[self presentModalViewController:imagePicker animated:YES];
         [imagePicker release];
     }
 }
@@ -60,7 +63,7 @@
     if([mediaType isEqualToString:(NSString *) kUTTypeImage])
     {
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        self.proImage = [[UIImageView alloc ] initWithImage:image];
+        proImage.image = image;
         [self performSelectorInBackground:@selector(uploadImage) withObject:self];
         //        self.isImageChanged = YES;
         //        NSLog(@"check if image changed %d",isImageChanged);
@@ -86,7 +89,7 @@
 -(void)uploadImage
 {
     NSString *flag = @"CHANGE_PIC";
-    NSData *imgData = UIImageJPEGRepresentation(self.proImage.image, 70);
+    NSData *imgData = UIImageJPEGRepresentation(proImage.image, 70);
     
     NSString *urlString = [NSString stringWithFormat:@"%@/api/settings_jambulite_profile.php?token=%@",APP_API_URL,[[[NSUserDefaults standardUserDefaults] objectForKey:@"tokenString"]mutableCopy]];
     NSURL *url = [[NSURL alloc] initWithString:urlString];

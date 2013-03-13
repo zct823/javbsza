@@ -55,6 +55,8 @@
 //@property (nonatomic, retain) NSArray *editAddressArray;
 @property (nonatomic, retain) NSMutableArray *addressArray;
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+
 - (IBAction)addMail:(id)sender;
 - (IBAction)changeImaged:(id)sender;
 - (void) reloadView;
